@@ -6,18 +6,21 @@
       <mat-form-field>
         <mat-label>nome</mat-label>
         <input matInput formControlName="nome" />
+        <mat-error *ngIf="f['nome'].hasError('required')"> richiesto</mat-error>
       </mat-form-field>
       <br />
 
       <mat-form-field>
         <mat-label>descrizione</mat-label>
         <input matInput formControlName="descrizione" />
+        <mat-error *ngIf="f['descrizione'].hasError('required')"> richiesto</mat-error>
       </mat-form-field>
       <br />
 
       <mat-form-field>
         <mat-label>valore</mat-label>
         <input matInput type="number" formControlName="valore" />
+        <mat-error *ngIf="f['valore'].hasError('required')"> sono accettati solo numeri</mat-error>
       </mat-form-field>
       <br />
 
