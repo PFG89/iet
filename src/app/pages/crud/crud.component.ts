@@ -3,6 +3,7 @@ import {
   FormBuilder,
   FormControl,
   FormGroup,
+  MinLengthValidator,
   Validators,
 } from '@angular/forms';
 import { ObjectDTO } from 'src/app/Dto/object-dto';
@@ -44,7 +45,19 @@ export class CrudComponent implements OnInit {
           const object: ObjectDTO = resp;
           console.log(object);
           this.conferma = true;
+          this.svuotaForm();
+          
         });
     }
   }
+
+  svuotaForm(){
+    this.formCrud.reset();
+  }
+
+  get f() {
+    return this.formCrud.controls;
+  }
+
 }
+
