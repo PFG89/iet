@@ -1,0 +1,46 @@
+<div class="conteiner">
+  <br />
+  <br />
+  <div id="content">
+    <form [formGroup]="formCrud" (submit)="onSubmit()">
+      <mat-form-field>
+        <mat-label>nome</mat-label>
+        <input matInput formControlName="nome" />
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <mat-label>descrizione</mat-label>
+        <input matInput formControlName="descrizione" />
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <mat-label>valore</mat-label>
+        <input matInput formControlName="valore" />
+      </mat-form-field>
+      <br />
+
+      <button
+      *ngIf="!conferma"
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="!formCrud.valid"
+      >
+        Aggiungi al DB
+      </button>
+
+      <button
+      *ngIf="conferma"
+      mat-raised-button
+      color="accent"
+      type="submit"
+      [disabled]="!formCrud.valid"
+    >
+      Aggiungi al DB
+    </button>
+    </form>
+ 
+  </div>
+</div>
