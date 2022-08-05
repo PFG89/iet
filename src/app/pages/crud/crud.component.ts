@@ -20,7 +20,7 @@ export class CrudComponent implements OnInit {
     private crudService: CrudService
   ) {}
 
-  conferma:boolean=false;
+  conferma: boolean = false;
 
   ngOnInit(): void {
     this.buildForm();
@@ -34,17 +34,17 @@ export class CrudComponent implements OnInit {
   }
   onSubmit() {
     if (this.formCrud.valid) {
-      
-      this.crudService.creaOggetto(
-        this.formCrud.get('nome')!.value,
-        this.formCrud.get('descrizione')!.value,
-        this.formCrud.get('valore')!.value
-      ).subscribe((resp)=>{const object:ObjectDTO = resp;
-   console.log(object);
-   this.conferma=true;
-   this.buildForm;
-   
-    });
+      this.crudService
+        .creaOggetto(
+          this.formCrud.get('nome')!.value,
+          this.formCrud.get('descrizione')!.value,
+          this.formCrud.get('valore')!.value
+        )
+        .subscribe((resp) => {
+          const object: ObjectDTO = resp;
+          console.log(object);
+          this.conferma = true;
+        });
     }
   }
 }

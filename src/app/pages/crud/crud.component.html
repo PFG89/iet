@@ -17,30 +17,18 @@
 
       <mat-form-field>
         <mat-label>valore</mat-label>
-        <input matInput formControlName="valore" />
+        <input matInput type="number" formControlName="valore" />
       </mat-form-field>
       <br />
 
       <button
-      *ngIf="!conferma"
         mat-raised-button
-        color="primary"
+        [color]="conferma ? 'accent' : 'primary' "
         type="submit"
         [disabled]="!formCrud.valid"
       >
-        Aggiungi al DB
+        {{ conferma ? " Aggiunto! " : " Aggiungi al DB " }}
       </button>
-
-      <button
-      *ngIf="conferma"
-      mat-raised-button
-      color="accent"
-      type="submit"
-      [disabled]="!formCrud.valid"
-    >
-      Aggiungi al DB
-    </button>
     </form>
- 
   </div>
 </div>
