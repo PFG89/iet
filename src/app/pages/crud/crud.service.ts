@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Oggetti } from 'src/app/command/oggetti';
+import { ListaObjectDto } from 'src/app/Dto/listaObjectDto';
+import { ObjectDTO } from 'src/app/Dto/object-dto';
 
 
 @Injectable({
@@ -18,7 +20,13 @@ export class CrudService {
      oggettoModel.descrizione = descrizione;
      oggettoModel.valore = valore;
 
-   return this.http.post<any>('http://localhost:8080/Item', oggettoModel); //chiamati di tipo post all'indirizzo be passando i dati dell'oggettoModel 
+   return this.http.post<any>('http://localhost:8080/item/create', oggettoModel); //chiamati di tipo post all'indirizzo be passando i dati dell'oggettoModel 
 
   }
+
+  //service per richiamare oggetti
+  listaOggetti(){
+    return this.http.get<ListaObjectDto>('http://localhost:8080/item/items',{})
+  }
+
 }

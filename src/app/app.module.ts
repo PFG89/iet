@@ -12,6 +12,8 @@ import { CrudComponent } from './pages/crud/crud.component';
 import { ButtonModule } from './components/button/button.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { TableComponent } from './table/table.component';
+
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     ZainoComponent,
     FiltroComponent,
     CrudComponent,
+    TableComponent,
+  
     
   ],
   imports: [

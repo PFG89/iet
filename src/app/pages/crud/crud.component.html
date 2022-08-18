@@ -6,22 +6,25 @@
       <mat-form-field>
         <mat-label>nome</mat-label>
         <input matInput formControlName="nome" />
-        <mat-error *ngIf="f['nome'].hasError('required')"> richiesto</mat-error>
+        <mat-error *ngIf="f['nome'].hasError('required')"> campo richiesto</mat-error>
       </mat-form-field>
       <br />
 
       <mat-form-field>
         <mat-label>descrizione</mat-label>
         <input matInput formControlName="descrizione" />
-        <mat-error *ngIf="f['descrizione'].hasError('required')"> richiesto</mat-error>
+        <mat-error *ngIf="f['descrizione'].hasError('required')"> campo richiesto</mat-error>
       </mat-form-field>
       <br />
 
       <mat-form-field>
         <mat-label>valore</mat-label>
         <input matInput type="number" formControlName="valore" />
-        <mat-error *ngIf="f['valore'].hasError('required')"> sono accettati solo numeri</mat-error>
+        <mat-error *ngIf="f['valore'].hasError('required')"> campo richiesto (sono accettati solo numeri)</mat-error>
       </mat-form-field>
+      <br />
+      <br />
+      <br />
       <br />
 
       <button
@@ -32,6 +35,14 @@
       >
         {{ conferma ? " Aggiunto! " : " Aggiungi al DB " }}
       </button>
+     
     </form>
   </div>
+  <app-table
+  *ngFor="let oggetto of lista"
+  nome="{{oggetto.nome}}"
+  descrizione="{{oggetto.descrizione}}"
+  {{oggetto.valore}}
+ ></app-table>
 </div>
+

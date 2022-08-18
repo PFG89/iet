@@ -10,8 +10,7 @@ import { ButtonComponent } from './button.component';
   imports: [
     CommonModule,
     NgMaterialModule,
-    
-  ],
+    ],
   exports:[ButtonComponent]
 })
 export class ButtonModule { }
